@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout the files
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Deploy to Server 1
         uses: easingthemes/ssh-deploy@main
@@ -31,8 +31,8 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             pm2 kill
+            pm2 startup
             cd /home/ubuntu/new-app/txc-next-app
-            npm run build
             pm2 start npm --name "txc-next-app" -- start
             pm2 save
             sudo systemctl restart nginx
