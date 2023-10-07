@@ -30,6 +30,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
+            pm2 kill
             cd /home/ubuntu/new-app/txc-next-app
+            npm run build
             pm2 start npm --name "txc-next-app" -- start
+            pm2 save
             sudo systemctl restart nginx
