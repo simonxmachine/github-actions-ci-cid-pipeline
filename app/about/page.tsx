@@ -12,8 +12,9 @@ export default function About() {
     <main>
       <h1 className="text-xl">About Us</h1>
       <p className="text-sm">
-        3333333 this is updated!! is a community of developers and designers who are passionate
-        about learning and sharing knowledge.
+        Im changing this from Vs code!! this is updated!! is a community of
+        developers and designers who are passionate about learning and sharing
+        knowledge.
       </p>
     </main>
   );
